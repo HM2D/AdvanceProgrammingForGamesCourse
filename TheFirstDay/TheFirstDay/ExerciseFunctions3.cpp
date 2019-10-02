@@ -1,6 +1,9 @@
 // Hooman Malekzadeh b9055911 01/10/2019
-#include "stdafx.h"
+#include <algorithm>
 #include <iostream>
+#include <string>
+#include <vector>
+#include <functional>
 #include <string>
 using namespace std;
 
@@ -17,29 +20,19 @@ void MyFunction(int x, int y)
 
 }
 
-float Add(float x, float y) {
 
-	return x + y;
+void print(vector<float>& v) {
+	for (const auto& e : v)
+	{
+		cout << e << "\t";
 
-}
+	}
 
-float Sub(float x, float y) {
 
-	return x - y;
-
-}
-
-float Product(float x, float y) {
-
-	return x * y;
 
 }
 
-float Devide(float x, float y)
-{
-	return x / y;
 
-}
 void Exercise3()
 {
 
@@ -50,27 +43,43 @@ void Exercise3()
 	cout << Quotient(5, 3) << "\n";
 	//Exercise3
 	cout << "Your First Number:";
-	float a;
-	cin >> a;
+	float a = 1;
+	//cin >> a;
 	cout << "Your Second Number:";
-	float b;
-	cin >> b;
+	float b = 1;
+	//cin >> b;
 	cout << "Please Select Your Operand:";
-	char c;
-	cin >> c;
+	char c = '+';
+	//cin >> c;
+	int temp = 0;
+
+
+
+	vector<float> v(10, 0);
+	generate(v.begin(), v.end(), [&]() mutable { float n = a + b; a = b; b = n; return n; });
+	
+	print(v);
+
+
+	cout << "The Answer: ";
+	auto x = [=] ()mutable{ return a + b; }();
+	auto y = [](auto a, auto b) { return a - b; }(a,b);
+	auto z = [](auto a, auto b) { return a / b; }(a,b);
+	auto w = [](auto a, auto b) { return a * b; }(a,b);
 	float answer;
 	switch (c)
 	{
-	case '+': answer = Add(a, b); break;
-
-	case '-': answer = Sub(a, b); break;
-	case '/': answer = Devide(a, b); break;
-	case '*': answer = Product(a, b); break;
-	default:
+	case '+': answer = x;  break;
+	case '-':  answer = y; break;
+	case '/': answer = z;  break;
+	case '*': answer = w; break;
+	default:  answer = 0;
 		break;
 	}
 
-	cout << "The Answer is:" << answer << "\n";
+	cout << answer;
+	
+
 
 
 }
