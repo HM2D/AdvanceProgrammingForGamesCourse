@@ -17,9 +17,9 @@ void main()
 	//Functions Exercise
 	//Exercise3();
 //	Exercise4();
-	//Day5();
+	Day5();
 	//Exercise4();
-	practice();
+	//practice();
 
 }
 

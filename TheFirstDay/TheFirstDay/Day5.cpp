@@ -2,58 +2,113 @@
 
 using namespace std;
 
-int recF(int y) {
 
-	if (y < 20) {
-		cout << "recF (1) = " << y << endl;
-		return (recF(y + 1));
-	}
-	cout << "recF (2) = " << y << endl;
-	return y;
-}
+struct node {
+public:
+	 int value;
+	 struct node* left;
+	 struct node* right;
+	 struct node* parent;
+};
+struct node* root = NULL;
+void insert_integer(struct node* &tree, int value);
 
-int recA(int y) {
+void terminate_tree(struct node* &tree);
 
-	if (y < 20) {
-		cout << "recA (1) = " << y << endl;
-		return (recF(recF(y + 1)));
-	}
-	cout << "recA (2) = " << y << endl;
-	return y;
-}
-
-
-int recB(int y) {
-
-	if (y < 20)
-		recB(y + 1);
-	cout << "recB = " << y << endl;
-	return y;
-}
-
-int recD(int y) {
-
-	if (y < 20) {
-		return (recB(recB(y + 1)));
-	}
-	cout << "recD = " << y << endl;
-	return y;
-}
-
+void print_tree(node* tree);
 
 void Day5() {
-	int x = 10;
-	recF(x);
-	cout << "-----" << endl;
 
-	int y = 10;
-	recB(y);
-	cout << "-----" << endl;
 
-	int z = 10;
-	recA(z);
-	cout << "-----" << endl;
+	node* tree= root;
+	insert_integer(tree, 5);
+	insert_integer(tree, 2);
+	insert_integer(tree, 3);
+	insert_integer(tree, 4);
+	//print_tree(tree);
+	
+	terminate_tree(tree);
+	tree = root;
+	print_tree(tree);
 
-	int q = 10;
-	recD(q);
 }
+
+
+void print_tree(node* tree) {
+
+
+
+	if (tree == NULL)
+		return;
+	
+	print_tree(tree->left);
+	cout << tree->value << endl;
+	
+	print_tree(tree->right);
+
+
+
+}
+
+void insert_integer(node* &tree, int value) {
+	if (tree == NULL) {
+	
+		tree = new node;
+		tree->value = value;
+		tree->left = NULL;
+		tree->right= NULL;
+		tree->parent = NULL;
+
+	}
+	else if (value > tree->value) {
+		insert_integer(tree->right, value);
+
+	}
+	else if (value <  tree->value) {
+		insert_integer(tree->left, value);
+
+	}
+
+
+
+
+}
+
+
+void terminate_tree(struct node* &tree) {
+
+
+	if (tree == NULL)
+	{
+		// tree = root;
+		return;
+	}
+	 if (tree->left != NULL) {
+		terminate_tree(tree->left);
+		delete tree->left;
+
+
+
+	}
+	if (tree -> right != NULL) {
+
+		terminate_tree(tree->right);
+		delete tree->right;
+
+
+	}
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
