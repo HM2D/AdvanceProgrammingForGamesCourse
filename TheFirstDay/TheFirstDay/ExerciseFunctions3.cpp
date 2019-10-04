@@ -27,6 +27,7 @@ void print(vector<float>& v) {
 		cout << e << "\t";
 
 	}
+	cout << endl;
 
 
 
@@ -52,16 +53,16 @@ void Exercise3()
 	char c = '+';
 	//cin >> c;
 	int temp = 0;
+	
 
-
-
+	int evenNumbers =0;
 	vector<float> v(10, 0);
-	generate(v.begin(), v.end(), [&]() mutable { float n = a + b; a = b; b = n; return n; });
+	generate(v.begin(), v.end(), [&]() mutable { int n = a + b; a = b; b = n; if (n % 2 == 0)evenNumbers++; return n; });
 	
 	print(v);
 
 
-	cout << "The Answer: ";
+	cout << "The evenNumbers: " << evenNumbers << endl;
 	auto x = [=] ()mutable{ return a + b; }();
 	auto y = [](auto a, auto b) { return a - b; }(a,b);
 	auto z = [](auto a, auto b) { return a / b; }(a,b);
