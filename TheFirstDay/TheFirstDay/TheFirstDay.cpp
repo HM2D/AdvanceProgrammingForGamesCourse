@@ -27,8 +27,8 @@ void main()
 	//practice();
 	//Weekend1();
 
-	//Weekend2();
-	Day6();
+	Weekend2();
+	//Day6();
 }
 
 

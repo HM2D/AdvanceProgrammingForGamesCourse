@@ -15,13 +15,50 @@ namespace mySpace {
 
 }
 
+void swap(int& a, int& b) {
+	int temp = a;
+	a = b;
+	b = temp;
+
+
+}
+
+int nums[10] = { 7,3,5,2,1,4,6,9,10,8 };
+
 int some_other_function() {
 	int x = 11;
 	
 	return x;
 }
-void Day6() {
 
+void sort(int* array, int length) {
+
+	for (int i = 0; i < length; i++) {
+		for (int j = 0; j < length; j++) {
+		
+			if (array[i] < array[j]) {
+				swap(array[i], array[j]);
+
+
+			}
+
+		}
+		
+
+
+	}
+
+
+
+
+}
+void Day6() {
+	int a = 10;
+	int b = 20;
+
+	swap(a, b);
+
+	cout << " A:" << a << " B: " << b << endl;
 
 	int x = 0;
 	int& y = x;
@@ -42,8 +79,14 @@ void Day6() {
 	
 	cout << mySpace::some_function() << endl;
 	cout << some_other_function() << endl;
+	
+	sort(nums,10);
 
+	for (int i = 0; i < 10; i++) {
 
+		cout << nums[i] << "-";
 
+	}
+	
 
 }

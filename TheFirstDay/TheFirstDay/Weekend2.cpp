@@ -22,7 +22,7 @@ void PrintStructure(node*& structure);
 int ValueAtIndex(node*& structure, int index);
 void EditIndex(node*& structure, int index, int value);
 void InsertAtIndex(node*& structure, int index, int value);
-void RemoveAtIndex(node*& structure, int index);
+void RemoveAtIndex(node* structure, int index);
 void TerminateDataStructure(node*& structure);
 void InitilizeStructure(node*& structure, int value, int length);
 int StructureLength(node*& structure);
@@ -32,17 +32,21 @@ void PrependToStructure(node*& structure, int value);
 //node* oneToDelete;
 void Weekend2() {
 
+
 	multiDataStructure[0] = new node;
 	multiDataStructure[1] = new node;
 	InitilizeStructure(multiDataStructure[0], 0, 5);
 	InitilizeStructure(multiDataStructure[1], 1, 5);
 	PrependToStructure(multiDataStructure[0], 99);
 	RemoveAtIndex(multiDataStructure[0], 1);
+	RemoveAtIndex(multiDataStructure[0], 1);
 	PrintStructure(multiDataStructure[0]);
 	cout << endl;
 	PrintStructure(multiDataStructure[1]);
 	
 	delete multiDataStructure;
+	cout << endl;
+	cout << []() { return []() {return []() {return 5; }(); }(); }() << endl;
 
 
 }
@@ -163,7 +167,7 @@ void EditIndex(node*& structure, int index, int value) {
 
 
 }
-void RemoveAtIndex(node*& structure, int index) {
+void RemoveAtIndex(node* structure, int index) {
 
 
 
@@ -179,15 +183,14 @@ void RemoveAtIndex(node*& structure, int index) {
 		perviousNode->next = structure->next;
 		//why?
 		//delete perviousNode;
-		//delete structure;
+		delete structure;
 		return;
 
 	}
 
 	else {
 		perviousNode = structure;
-		//cout << "Value of the pervious Node:" << (*perviousNode)->value << endl;
-
+		
 		RemoveAtIndex(structure->next, index - 1);
 
 	}
