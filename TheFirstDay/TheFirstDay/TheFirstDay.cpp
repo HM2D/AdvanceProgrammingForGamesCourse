@@ -3,8 +3,12 @@
 #include "stdafx.h"
 //#include "ExerciseFunctions3.cpp"
 //#include "Day4.cpp"
-#include "PointerPractice.cpp"
-#include "Day5.cpp"
+//#include "PointerPractice.cpp"
+//#include "Day5.cpp"
+//#include "Day5-2.cpp"
+//#include "Weekend1.cpp"
+#include "Weekend2.cpp";
+#include "Day6.cpp"
 #include <iostream>
 #include <string>
 
@@ -17,10 +21,14 @@ void main()
 	//Functions Exercise
 	//Exercise3();
 //	Exercise4();
-	Day5();
+	//Day5Part2();
+	//Day5Part3();
 	//Exercise4();
 	//practice();
+	//Weekend1();
 
+	//Weekend2();
+	Day6();
 }
 
 
