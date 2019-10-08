@@ -7,8 +7,10 @@
 //#include "Day5.cpp"
 //#include "Day5-2.cpp"
 //#include "Weekend1.cpp"
-#include "Weekend2.cpp";
-#include "Day6.cpp"
+//#include "Weekend2.cpp";
+//#include "Day6.cpp"
+//#include "Day7.cpp"
+//#include "Day7-2.cpp"
 #include <iostream>
 #include <string>
 
@@ -27,8 +29,11 @@ void main()
 	//practice();
 	//Weekend1();
 
-	Weekend2();
+	//Weekend2();
 	//Day6();
+	//Day7();
+	//battleship();
+	//Day7Part2();
 }
 
 
