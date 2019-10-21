@@ -67,7 +67,7 @@ template <typename T>
 class Node {
 public:
 	Node(T value);
-	~Node();
+	~Node() {};
 	template <typename M>
 	friend ostream& operator <<(ostream& ostr,Node<M>* node);
 	Node* getLeft() { return left; }

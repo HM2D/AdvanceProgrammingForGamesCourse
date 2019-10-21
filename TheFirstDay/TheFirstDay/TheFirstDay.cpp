@@ -12,7 +12,7 @@
 //#include "Day7.cpp"
 //#include "Day7-2.cpp"
 #include "Day8.cpp"
-#include "Day9.cpp"
+//#include "Day9.cpp"
 #include <iostream>
 #include <string>
 
@@ -37,7 +37,7 @@ void main()
 	//battleship();
 	//Day7Part2();
 	Day8();
-	Day9();
+//	Day9();
 
 }
 

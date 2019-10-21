@@ -10,6 +10,7 @@ public:
 	virtual ~Enemy() { delete score; };
 	virtual int get_hit_points() =0;
 	virtual int get_score() { return *score; };
+
 protected:
 	int hit_points;
 	int* score;
@@ -256,6 +257,9 @@ ArmedEnemy** ArmedEnemies = new ArmedEnemy* [11];
 	}
 	delete[] ArmedEnemies;
 	ArmedEnemies = NULL;
+
+
+
 /////////////////////////////////////////////////////////////////////
 	cout << "Start of BST:" << endl;
 	Comparable* Root = NULL;
@@ -265,7 +269,7 @@ ArmedEnemy** ArmedEnemies = new ArmedEnemy* [11];
 		Node[i] = new Derived(i);
 		InsertValue(Root, Node[i]);
 	}
-	PrintMe(Root);
+	//PrintMe(Root);
 	//cout << D->compare_to(*B);
 
 
